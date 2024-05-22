@@ -3,7 +3,7 @@ import time
 def time_execution(func):
     def wrapper(*args, **kwargs):
         start_time = time.time()
-        result = func(*args, **kwargs)
+        result = func()
         end_time = time.time()
         print(f"Execution time: {end_time - start_time} s")
         return result

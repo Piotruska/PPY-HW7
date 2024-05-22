@@ -38,23 +38,22 @@ def analyze_logs(file_path, ip_range, methods, min_response_time):
 def main_menu():
     while True:
         print("\nServer Log Analysis Menu")
-        print("1. Analyze logs")
+        print("1. Analyse logs")
         print("2. Exit")
         choice = input("Enter your choice: ")
 
         if choice == '1':
-            file_path = input("Enter log file path: ")
-            ip_range = input("Enter IP range (e.g., '192.168.1.1-192.168.1.100'): ").split('-')
-            methods = input("Enter HTTP methods (comma-separated, e.g., 'GET,POST'): ").split(',')
-            min_response_time = float(input("Enter minimum response time: "))
+            file_path = input("log file path: ")
+            ip_range = input("IP range (e.g., '192.168.1.1-192.168.1.100'): ").split('-')
+            methods = input("HTTP methods (comma-separated, e.g., 'GET,POST'): ").split(',')
+            min_response_time = float(input("Minimum respons time: "))
 
             stats = analyze_logs(file_path, ip_range, methods, min_response_time)
             print("\nAnalysis Results:")
             print(f"Unique IPs: {stats['Unique IPs']}")
             print(f"HTTP Methods Count: {stats['Method Counts']}")
-            print(f"Average Response Time: {stats['Average Response Time']:.2f} seconds")
+            print(f"Average Respons Time: {stats['Average Response Time']:.2f} seconds")
         elif choice == '2':
-            print("Exiting...")
             break
         else:
             print("Invalid choice. Please try again.")
